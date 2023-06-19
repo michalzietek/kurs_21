@@ -6,7 +6,6 @@ zadanie_1_student_1 = True
 zadanie_1_student_2 = False
 students = ["Marcin Brzeczyszczykiewicz", "Michal Zietkowski", "Maciej Dlugosz", "Adam Wawszczyk", True, 11, [1, 2, 3]]
 new_student = students[0]
-len
 new_student = "Maja"
 students_length = len(students)
 print(students)
