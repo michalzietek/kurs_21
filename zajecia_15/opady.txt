@@ -1,1 +1,1 @@
-{"Szczecin": {"2023-07-14": "Nie bedzie padac", "2023-07-15": "Nie bedzie padac"}, "Poznan": {"2023-07-14": "Bedzie padac"}}
+{"Szczecin": {"2023-07-14": "Nie bedzie padac", "2023-07-15": "Nie bedzie padac"}, "Poznan": {"2023-07-14": "Bedzie padac"}, "Warszawa": {"2023-07-15": "Nie bedzie padac"}}

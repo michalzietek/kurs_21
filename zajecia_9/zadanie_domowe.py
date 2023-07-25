@@ -1,42 +1,3 @@
-'''
-Utwórz program do zarządzania bazą szkolną. Istnieje możliwość tworzenia trzech typów użytkowników (uczeń, nauczyciel, wychowawca) a także zarządzania nimi.
-
-Po uruchomieniu programu można wpisać jedną z następujących komend: utwórz, zarządzaj, koniec.
-
-    Polecenie "utwórz" - Przechodzi do procesu tworzenia użytkowników.
-    Polecenie "zarządzaj" - Przechodzi do procesu zarządzania użytkownikami.
-    Polecenie "koniec" - Kończy działanie aplikacji.
-
-
-Proces tworzenia użytkowników:
-
-    Należy wpisać opcję, którą chcemy wybrać: uczeń, nauczyciel, wychowawca, koniec. Po wykonaniu każdej z opcji (oprócz "koniec") wyświetla to menu ponownie.
-    Polecenie "uczeń" - Należy pobrać imię i nazwisko ucznia (jako jedna zmienna, można pobrać je jako dwie zmienne, jeżeli zostanie to poprawnie obsłużone) oraz nazwę klasy (np. "3C")
-    Polecenie "nauczyciel" - Należy pobrać imię i nazwisko nauczyciela (jako jedna zmienna, labo dwie, jeżeli zostanie to poprawnie obsłużone), nazwę przedmiotu prowadzonego, a następnie w nowych liniach nazwy klas, które prowadzi nauczyciel, aż do otrzymania pustej linii.
-    Polecenie "wychowawca" - Należy pobrać imię i nazwisko wychowawcy (jako jedna zmienna, albo dwie, jeżeli zostanie to poprawnie obsłużone), a także nazwę prowadzonej klasy.
-    Polecenie "koniec" - Wraca do pierwszego menu.
-
-
-Proces zarządzania użytkownikami:
-
-    Należy wpisać opcję, którą chcemy wybrać: klasa, uczen, nauczyciel, wychowawca, koniec. Po wykonaniu każdej z opcji (oprócz "koniec") wyświetla to menu ponownie.
-    Polecenie "klasa" - Należy pobrać klasę, którą chcemy wyświetlić (np. "3C") program ma wypisać wszystkich uczniów, którzy należą do tej klasy, a także wychowawcę tejże klasy.
-    Polecenie "uczeń" - Należy pobrać imię i nazwisko ucznia, program ma wypisać wszystkie lekcje, które ma uczeń a także nauczycieli, którzy je prowadzą.
-    Polecenie "nauczyciel" - Należy pobrać imię i nazwisko nauczyciela, program ma wypisać wszystkie klasy, które prowadzi nauczyciel.
-    Polecenie "wychowawca" - Należy pobrać imię i nazwisko nauczyciela, a program ma wypisać wszystkich uczniów, których prowadzi wychowawca.
-    Polecenie "koniec" - Wraca do pierwszego menu.
-
-
-stworzyc system do zarzadzania nasza szkola:
-kilka typow menu bedziemy miel
--glowne
--do tworzenia sobie uzytkownikow
--do zarzadzania uzytkownikami
-
-Ogarnac jaka chcemy miec strukture tutaj jezeli chodzi o ta nasza szkole
-w momencie tworzenia mozemy sobie skorzystac z jakis funkcji, bo widzimy, ze nasz kod się powtarza
-
-'''
 class Student:
     def __init__(self, name, surname):
         self.name = name
@@ -47,6 +8,9 @@ class Student:
 
 
 class Teacher:
+
+    szkola = "szkola nr 4"
+
     def __init__(self, name, surname, subject, grades):
         self.name = name
         self.surname = surname
@@ -54,11 +18,33 @@ class Teacher:
         self.grades = grades
 
     def __repr__(self):
-        return f"Imię: {self.name}, Nazwisko: {self.surname}, Zajęcia: {self.subject}, Klasy: {self.grades}"
+        return f"Imię: {self.name}, Nazwisko: {self.surname}, Zajęcia: {self.subject}, Klasy: {self.grades}, Szkoła: {self.szkola}"
+
+    def check_how_many_classes_teacher_has(self):
+        return len(self.grades)
+
+    def show_me_my_name(self):
+        print(f"Twoje imie to {self.name}")
+
+    @classmethod
+    def zmien_moja_szkole(cls, nowa_szkola):
+        cls.szkola = nowa_szkola
+
+    @staticmethod
+    def przywitaj_sie():
+        print("Czesc moj swiecie")
+
 
 #w domu potworzyli sobie klasy dla Nauczyciela i wychowawcy i zmienili je w naszej szkole
 
+teacher = Teacher(name="Andrzej", surname="Iwan", subject="WF", grades=["1a", "2b"])
+teacher2 = Teacher(name="Andrzej", surname="Iwan", subject="WF", grades=["1a", "2b"])
+teacher.zmien_moja_szkole("szkola numer 1")
+teacher2.zmien_moja_szkole("szkola numer 2")
+teacher.przywitaj_sie()
 
+print(teacher2)
+print(teacher)
 our_school = {
     "klasy": {
         "1a": {
@@ -76,7 +62,8 @@ our_school = {
             }
         },
     },
-    "nauczyciele": [Teacher(name="Andrzej", surname="Iwan", subject="WF", grades=["1a", "2b"])]
+    "nauczyciele": [Teacher(name="Andrzej", surname="Iwan", subject="WF", grades=["1a", "2b"]),
+                    Teacher(name="Andrzej", surname="Iwan", subject="WF", grades=["1a", "2b"])],
 }
 
 
@@ -120,7 +107,6 @@ def find_student_by_name(name, surname):
                     our_text += f" Nauczyciel: {teacher.name} {teacher.surname} z przedmiotem: {teacher.subject} \n"
                 return our_text
     return "Niestety twoja klasa nie ma żadnych zajęć"
-
 
 initial_menu = "Witaj w swojej szkole. Podaj proszę co chcesz zrobić:\n 1.Uwtórz\n 2.Zarządzaj\n 3.Koniec\n"
 create_menu = "Podaj jakiego użytkownika chcesz utworzyć:\n 1.Uczeń \n 2.Nauczyciel \n 3.Wychowawca \n 4.Koniec"

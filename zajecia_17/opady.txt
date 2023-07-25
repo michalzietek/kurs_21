@@ -1,0 +1,1 @@
+{"Szczecin": {"2023-07-21": "Bedzie pada\u0107", "2023-07-20": "Bedzie pada\u0107"}, "Wroclaw": {"2023-07-21": "Bedzie pada\u0107", "2023-07-20": "Bedzie pada\u0107"}, "Poznan": {"2023-07-25": "Nie bedzie padac"}}
