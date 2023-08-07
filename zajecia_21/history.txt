@@ -1,0 +1,1 @@
+zwiekszono saldo o 200 zl, sprzedano 1 rower o wartosci 100 zl, zmniejszono saldo o 300 zl,Wykonano instrukcję saldo, zasilono 1000.0,
