@@ -1,0 +1,17 @@
+h1 {
+    background-color: red;
+}
+
+#magazyn_nr2{
+    background-color: yellow;
+}
+
+.main_header{
+    background-color: blue;
+    padding: 10px;
+}
+
+#form_div{
+    text-align: center;
+    vertical-align: middle
+}
